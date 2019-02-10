@@ -47,6 +47,6 @@ def create_map(data_locations):
 
 
 if __name__ == "__main__":
-    title = input("Enter any title you want to find(in english): ")
+    title = input("Enter any title you want to find: ")
     data_locations = read_data(title, "locations.csv")
     create_map(data_locations)
