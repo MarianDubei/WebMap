@@ -6,6 +6,10 @@ import webbrowser
 
 
 def read_data(title, filename):
+    """(str, str) -> list
+    Reads data from file and returns list of locations based on titles,
+    which contain entered string.
+    """
     data = pd.read_csv(filename, error_bad_lines=False)
     data.dropna()
     data_input = data[data["movie"].str.contains(title)]
@@ -22,6 +26,10 @@ def read_data(title, filename):
 
 
 def create_map(data_locations):
+    """(list) -> None
+    Creates html page with map with locations, where movies were captured
+    and countries with their population.
+    """
     web_map = folium.Map(location=[0, 0], zoom_start=2)
 
     fg_location = folium.FeatureGroup(name="Film Locations")
